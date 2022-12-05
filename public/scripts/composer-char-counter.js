@@ -14,11 +14,11 @@ $(document).ready(function() {
       $(this).parent().find('button').attr("disabled", false);
     }
 
-    if (inputLength > 0) {
-      $(this).parent().find('label').addClass('minimize');
-    } else {
-      $(this).parent().find('label').removeClass('minimize');
-    }
+    // if (inputLength > 0) {
+    //   $(this).parent().find('label').addClass('minimize');
+    // } else {
+    //   $(this).parent().find('label').removeClass('minimize');
+    // }
 
   });
 

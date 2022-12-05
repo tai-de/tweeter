@@ -12,16 +12,16 @@ nav {
   box-shadow: 0 0px 5px 5px rgb(var(--clr-bistre), 0.25);
 }
 
-nav span.logo {
+nav .logo {
   font-family: 'Bungee', sans-serif;
 }
 
-nav .nav-new-tweet {
+nav .nav-compose-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-nav .nav-new-tweet i {
+nav .nav-compose-tweet i {
   color: rgb(255, 0, 0);
 }

@@ -2,6 +2,7 @@
 @import url(./nav.css);
 @import url(./header.css);
 @import url(./new-tweet.css);
+@import url(./tweets.css);
 
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -22,6 +23,6 @@ html {
   --clr-bistre: 50, 34, 20;
   --clr-liberty: 64, 86, 161;
   --clr-ghost-white: 247, 247, 255;
-  --clr-pacific-blue: 70, 177, 201;
+  --clr-pacific-blue: 55, 165, 190;
   --clr-aquamarine: 113, 254, 212;
 }

@@ -1,15 +1,4 @@
-/* The visible portion of the header should have a height of 400px and be 100% the width of its parent container The avatar should be centered vertically and horizontally (Hint: the justify-content and align-items properties are helpful for centering things if you're using Flexbox.)
- The name should be centered below the avatar The background-color should be a different colour than the nav and the body 
- 
- header
-  div
-    img
-  div
-    h2
- 
- */
-
-header {
+.user-container {
   height: 400px;
   margin-top: 120px;
   width: 100%;
@@ -22,13 +11,13 @@ header {
   box-shadow: 0 0px 5px 5px rgb(var(--clr-bistre), 0.25);
 }
 
-header img {
+.user-container img {
   margin: 0.25em;
   -webkit-filter: drop-shadow(5px 5px 5px rgb(var(--clr-bistre)));
   filter: drop-shadow(5px 5px 5px rgb(var(--clr-bistre)));
 }
 
-header h2 {
+.user-container h2 {
   margin: 0.25em;
   font-weight: normal;
 }
