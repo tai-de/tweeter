@@ -1,0 +1,27 @@
+@import url(./layout.css);
+@import url(./nav.css);
+@import url(./header.css);
+@import url(./new-tweet.css);
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --clr-bistre: 50, 34, 20;
+  --clr-liberty: 64, 86, 161;
+  --clr-ghost-white: 247, 247, 255;
+  --clr-pacific-blue: 70, 177, 201;
+  --clr-aquamarine: 113, 254, 212;
+}

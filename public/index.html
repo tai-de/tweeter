@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Google Fonts/Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/all.css" type="text/css" />
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="logo">tweeter</span>
+    <span class="nav-new-tweet">
+      <span><strong>Write</strong> a new tweet</span>
+      <i class="fa-solid fa-angles-down"></i>
+    </span>
+  </nav>
+  <header>
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <div>
+      <h2><strong>Tai</strong> Delisle</h2>
+    </div>
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets/" method="POST">
+        <div class="new-tweet-input">
+          <label for="tweet-text" id="tweet-text-label">What are you <i>humming</i> about?</label>
+          <textarea name="text" id="tweet-text" rows="1"></textarea>
+        </div>
+        <div class="new-tweet-controls">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Blandit massa enim nec dui nunc mattis enim. Mauris pellentesque pulvinar pellentesque habitant
+        morbi tristique senectus et. Amet dictum sit amet justo donec enim. Amet justo donec enim diam vulputate ut.
+        Ultrices neque ornare aenean euismod elementum. Est lorem ipsum dolor sit amet consectetur adipiscing elit
+        pellentesque.</p>
+
+      <p>Amet nulla facilisi morbi tempus iaculis urna id volutpat lacus. In nibh mauris cursus mattis molestie a
+        iaculis. Habitasse platea dictumst vestibulum rhoncus est. Sed id semper risus in hendrerit gravida rutrum
+        quisque non. Ac tortor vitae purus faucibus ornare suspendisse. Proin fermentum leo vel orci porta non pulvinar
+        neque laoreet. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Nunc congue nisi vitae suscipit.
+        Cras ornare arcu dui vivamus arcu felis bibendum. Imperdiet proin fermentum leo vel orci. Massa tincidunt nunc
+        pulvinar sapien et ligula ullamcorper.
+      </p>
+    </div>
+  </main>
+  <!-- <a href="https://www.freepik.com/free-vector/hand-drawn-people-avatar-collection_5183188.htm#query=avatar&position=4&from_view=author">Image by pikisuperstar</a> on Freepik -->
+</body>
+
 </html>

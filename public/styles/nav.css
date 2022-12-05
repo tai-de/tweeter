@@ -1,0 +1,27 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  padding: 0 1.5em;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: rgb(var(--clr-liberty));
+  color: rgb(var(--clr-ghost-white));
+  box-shadow: 0 0px 5px 5px rgb(var(--clr-bistre), 0.25);
+}
+
+nav span.logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+nav .nav-new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav .nav-new-tweet i {
+  color: rgb(255, 0, 0);
+}
