@@ -8,11 +8,11 @@
 
 .tweet {
   padding: 1em;
-  border: solid 3px rgb(var(--clr-bistre));
+  border: solid 3px rgb(var(--clr-dark));
 }
 
 .tweet:hover {
-  box-shadow: 5px 5px rgb(var(--clr-pacific-blue), 0.5);
+  box-shadow: 5px 5px rgb(var(--clr-accent), 0.5);
 }
 
 .tweet header {
@@ -25,25 +25,25 @@
 }
 
 .tweet img {
-  height: 50px;
-  width: 50px;
+  height: 1.75em;
+  width: 1.75em;
 }
 
 .tweet .tweet-user-name {
   flex-grow: 2;
   padding: 0 1em;
-  color: rgb(var(--clr-bistre), 0.75);
+  color: rgb(var(--clr-dark), 0.75);
 }
 
 .tweet .tweet-user-handle {
-  color: rgb(var(--clr-pacific-blue));
+  color: rgb(var(--clr-accent));
   cursor: pointer;
   font-size: 0.75em;
 }
 
 .tweet .tweet-content {
   padding: 1em;
-  border-bottom: solid 3px rgb(var(--clr-bistre));
+  border-bottom: solid 3px rgb(var(--clr-dark));
   -ms-word-wrap: normal;
   word-wrap: break-word;
 }
@@ -54,7 +54,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 0.75em;
-  color: rgb(var(--clr-bistre), 0.75);
+  color: rgb(var(--clr-dark), 0.75);
 }
 
 .tweet .tweet-date {
@@ -66,6 +66,6 @@
 }
 
 .tweet footer i:hover {
-  color: rgba(var(--clr-pacific-blue));
+  color: rgba(var(--clr-accent));
   cursor: pointer;
 }

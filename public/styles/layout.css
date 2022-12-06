@@ -6,10 +6,10 @@ body {
   /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  color: rgb(var(--clr-bistre));
-  background-color: rgb(var(--clr-aquamarine));
+  color: rgb(var(--clr-dark));
+  background-color: rgb(var(--clr-main));
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 /*
@@ -17,30 +17,13 @@ body {
  */
 
 /*  CUSTOM COLOR PALETTE
- https: //coolors.co/322214-4056a1-f7f7ff-46b1c9-1cfeba
+ https://coolors.co/322214-4056a1-f7f7ff-46b1c9-1cfeba
  */
 
 main {
   width: 90%;
   align-self: center;
   margin-bottom: 5vh;
-}
-
-.toTopButton {
-  position: fixed;
-  right: 0.5em;
-  bottom: 0.5em;
-  height: 2em;
-  width: 2em;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(var(--clr-pacific-blue));
-  border-radius: 50%;
-  color: rgb(var(--clr-ghost-white), 0.5);
-}
-
-.toTopButton:hover {
-  color: rgb(var(--clr-ghost-white), 1);
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }

@@ -5,33 +5,52 @@ section.new-tweet {
 .new-tweet form {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: column;
 }
 
+.new-tweet h3 {
+  margin-block-end: 0em;
+  color: rgb(var(--clr-accent));
+}
+
 .new-tweet label {
-  height: 1em;
+  height: 0em;
+  position: relative;
+  top: 1.25em;
+  left: 1em;
   font-size: 1em;
   font-weight: bold;
-  color: rgb(var(--clr-bistre), 0.5);
+  color: rgb(var(--clr-dark), 0.5);
 }
 
 .new-tweet label.minimize {
-  top: 0px;
-  font-size: 0.5em;
+  top: -0.2em;
+  font-size: 0.75em;
+  transition: 1s cubic-bezier(.15, .8, .3, .9);
+}
+
+.new-tweet label.restore {
+  top: 1.25em;
+  font-size: 1em;
+  transition: 1s cubic-bezier(.15, .8, .3, .9);
 }
 
 .new-tweet textarea {
   resize: none;
   font-weight: bold;
+  min-height: 2em;
   width: 100%;
   background: transparent;
+  padding: 0 0.5em 0.5em;
   border: 0px;
-  border-bottom: solid 3px rgb(var(--clr-bistre));
+  border-bottom: solid 3px rgb(var(--clr-dark));
   outline: none;
+  overflow-y: hidden;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  z-index: 1;
 }
 
 .new-tweet .new-tweet-controls {
@@ -40,27 +59,40 @@ section.new-tweet {
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 0 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .new-tweet button {
   font-family: 'Bungee', sans-serif;
-  background: rgb(var(--clr-liberty));
-  color: rgb(var(--clr-ghost-white));
-  border: none;
+  background: rgb(var(--clr-nav));
+  color: rgb(var(--clr-light));
+  border: 1px solid rgb(var(--clr-nav));
   padding: 0.25em 0.5em;
+}
+
+.new-tweet button:hover {
+  background: rgb(var(--clr-main));
+  color: rgb(var(--clr-nav));
+  border: 1px solid rgb(var(--clr-nav));
+  cursor: pointer;
 }
 
 .new-tweet .tweet-error {
   display: none;
   color: #f00;
   font-family: 'Bungee', sans-serif;
+  font-size: 0.75em;
   font-weight: bold;
   transition: ease-in-out;
 }
 
 .new-tweet .counter {
   font-family: 'Bungee', sans-serif;
-  color: rgb(var(--clr-bistre), 1);
+  color: rgb(var(--clr-dark), 1);
   font-size: 1.25em;
 }
 

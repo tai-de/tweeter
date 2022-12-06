@@ -109,6 +109,13 @@ $(document).ready(function() {
       return;
     };
 
+    // Prevent too short of a tweet
+
+    if (tweetContent.length < 10) {
+      $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> Don't be shy, speak your mind!`);
+      $('#tweet-error').slideDown(500);
+      return;
+    };
     // Prevent too long of a tweet
 
     if (tweetContent.length > 145) {
@@ -127,6 +134,11 @@ $(document).ready(function() {
     // Reset input field and character count on submit
 
     $(this).trigger("reset");
+    $('#tweet-text').css({ 'height': 'auto' });
+    $('#tweet-text').css({ 'height': ($('#tweet-text').scrollHeight) + 'px' });
+    $('#tweet-text-label').addClass('restore');
+    $('#tweet-text-label').removeClass('minimize');
+    $('#tweet-text').focus();
     $('.counter').html('140');
     $('#tweet-error').fadeOut(250);
 
