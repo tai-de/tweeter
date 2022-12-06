@@ -98,12 +98,18 @@ $(document).ready(function() {
 
   $("form").submit(function(event) {
 
+    $('#tweet-error').hide();
+
     event.preventDefault();
-    const tweetContent = $(this).serialize();
+
+    const tweetContent = $('#tweet-text').val().trim();
+    const serializedContent = $(this).serialize();
+
+    $('#tweet-text').val(tweetContent);
 
     // Prevent empty submissions
 
-    if (tweetContent === 'text=') {
+    if (tweetContent === '') {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You can't tweet nothing!`);
       $('#tweet-error').fadeIn(500);
       return;
@@ -113,22 +119,23 @@ $(document).ready(function() {
 
     if (tweetContent.length < 10) {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> Don't be shy, speak your mind!`);
-      $('#tweet-error').slideDown(500);
+      $('#tweet-error').fadeIn(500);
       return;
     };
     // Prevent too long of a tweet
 
-    if (tweetContent.length > 145) {
+    if (tweetContent.length > 140) {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You sure have a lot to say!`);
-      $('#tweet-error').slideDown(500);
+      $('#tweet-error').fadeIn(500);
       return;
     };
 
     // Ajax post to /tweets, once completed, create tweet element and add to page
 
-    $.post("/tweets", tweetContent, (tweetObj) => {
-      const tweetElement = createTweetElement(tweetObj);
-      $('#tweets-container').prepend(tweetElement);
+    $.post("/tweets", serializedContent, (tweetObj) => {
+      renderTweets([tweetObj]);
+      // const tweetElement = createTweetElement(tweetObj);
+      // $('#tweets-container').prepend(tweetElement);
     });
 
     // Reset input field and character count on submit
