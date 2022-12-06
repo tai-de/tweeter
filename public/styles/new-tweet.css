@@ -1,7 +1,6 @@
-/* 
-.new-tweet
-.counter
-*/
+section.new-tweet {
+  display: none;
+}
 
 .new-tweet form {
   width: 100%;

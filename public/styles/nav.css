@@ -1,4 +1,30 @@
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
 
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateY(-4px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateY(4px);
+	}
+
+	80% {
+		transform: translateY(3.1px);
+	}
+
+	90% {
+		transform: translateY(-3.1px);
+	}
+}
 
 nav {
   height: 120px;
@@ -24,11 +50,21 @@ nav .logo {
 }
 
 nav .nav-compose-tweet {
+  height: 2.25em;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  color: rgb(var(--clr-ghost-white), 0.5);
 }
 
 nav .nav-compose-tweet i {
   color: rgb(255, 0, 0);
+  animation: myAnim 10s linear 0s infinite normal forwards;
+}
+
+nav .nav-compose-tweet:hover {
+  color: rgb(var(--clr-ghost-white));
+  cursor: pointer;
+  animation: none;
 }
