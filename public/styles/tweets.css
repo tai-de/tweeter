@@ -16,7 +16,11 @@
 */
 
 #tweets-container {
-  margin-top: 25px;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  gap: 1em;
 }
 
 .tweet {
@@ -50,6 +54,8 @@
 
 .tweet .tweet-user-handle {
   color: rgb(var(--clr-pacific-blue));
+  cursor: pointer;
+  font-size: 0.75em;
 }
 
 .tweet .tweet-content {

@@ -83,8 +83,26 @@
         </footer>
       </article>
     </section>
+    <script>
 
-    <div>
+const tweetData = {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+    "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+    "created_at": 1461116232227
+ }
+ 
+ const $tweet = createTweetElement(tweetData);
+ $('#tweets-container').append($tweet);
+
+    </script>
+
+    <!-- <div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Blandit massa enim nec dui nunc mattis enim. Mauris pellentesque pulvinar pellentesque habitant
         morbi tristique senectus et. Amet dictum sit amet justo donec enim. Amet justo donec enim diam vulputate ut.
@@ -98,7 +116,7 @@
         Cras ornare arcu dui vivamus arcu felis bibendum. Imperdiet proin fermentum leo vel orci. Massa tincidunt nunc
         pulvinar sapien et ligula ullamcorper.
       </p>
-    </div>
+    </div> -->
   </main>
   <!-- <a href="https://www.freepik.com/free-vector/hand-drawn-people-avatar-collection_5183188.htm#query=avatar&position=4&from_view=author">Image by pikisuperstar</a> on Freepik -->
 </body>

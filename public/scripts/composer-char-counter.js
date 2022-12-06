@@ -4,14 +4,14 @@ $(document).ready(function() {
     inputLength = $(this).val().length;
     remainingChars = 140 - inputLength;
 
-    $(this).parent().children('div').children('output').html(remainingChars);
+    $(this).parent().siblings().children('output').html(remainingChars);
 
     if (remainingChars < 0) {
-      $(this).parent().find('output').addClass('invalid');
-      $(this).parent().find('button').attr("disabled", true);
+      $(this).parent().siblings().find('output').addClass('invalid');
+      $(this).parent().siblings().find('button').attr("disabled", true);
     } else if (remainingChars >= 0) {
-      $(this).parent().find('output').removeClass('invalid');
-      $(this).parent().find('button').attr("disabled", false);
+      $(this).parent().siblings().find('output').removeClass('invalid');
+      $(this).parent().siblings().find('button').attr("disabled", false);
     }
 
     // if (inputLength > 0) {
