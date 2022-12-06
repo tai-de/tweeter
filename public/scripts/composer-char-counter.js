@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  // Set up textarea to listen for any changes & update character counter
+
   $('#tweet-text').bind('input propertychange', function() {
 
     inputLength = $(this).val().length;
@@ -8,10 +11,8 @@ $(document).ready(function() {
 
     if (remainingChars < 0) {
       $(this).parent().siblings().find('output').addClass('invalid');
-      // $(this).parent().siblings().find('button').attr("disabled", true);
     } else if (remainingChars >= 0) {
       $(this).parent().siblings().find('output').removeClass('invalid');
-      // $(this).parent().siblings().find('button').attr("disabled", false);
     }
 
     // if (inputLength > 0) {
@@ -21,6 +22,8 @@ $(document).ready(function() {
     // }
 
   });
+
+  // Scale textarea based on input
 
   $('textarea').each(function() {
     this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');

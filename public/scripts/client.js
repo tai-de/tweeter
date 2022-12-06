@@ -4,37 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+// Function to create the HTML for tweets
 
 const createTweetElement = function(tweet) {
 
@@ -44,27 +14,59 @@ const createTweetElement = function(tweet) {
   const content = tweet.content.text;
   const date = timeago.format(tweet["created_at"], 'en_US');
 
+  // Build the individual items within the tweet article
 
-  const $tweet = $(`<article class="tweet">
-  <header>
-    <span class="tweet-user-img"><img src="${avatar}"></span>
-    <span class="tweet-user-name">${name}</span>
-    <span class="tweet-user-handle">${handle}</span>
-  </header>
-  <section class="tweet-content">${escape(content)}</section>
-  <footer>
-    <span class="tweet-date">${date}</span>
-    <span class="tweet-buttons">
-      <i class="fa-regular fa-flag"></i>
-      <i class="fa-solid fa-retweet"></i>
-      <i class="fa-regular fa-heart"></i>
-    </span>
-  </footer>
-</article>`);
+  const $tweetUserImg = $("<span>")
+    .attr("class", "tweet-user-img")
+    .html(`<img src="${avatar}"/>`);
+
+  const $tweetUserName = $("<span>")
+    .attr("class", "tweet-user-name")
+    .html(name);
+
+  const $tweetUserHandle = $("<span>")
+    .attr("class", "tweet-user-handle")
+    .html(handle);
+
+
+  const $tweetDate = $("<span>")
+    .attr("class", "tweet-date")
+    .html(date);
+
+  const $tweetButtons = $(`<span class="tweet-buttons">
+    <i class="fa-regular fa-flag"></i>
+    <i class="fa-solid fa-retweet"></i>
+    <i class="fa-regular fa-heart"></i>
+    </span>`);
+
+  // Building the sections of the tweet article element
+
+  const $tweetHeader = $("<header>")
+    .append($tweetUserImg)
+    .append($tweetUserName)
+    .append($tweetUserHandle);
+
+  const $tweetContent = $("<section>")
+    .attr("class", "tweet-content")
+    .text(content);
+
+  const $tweetFooter = $("<footer>")
+    .append($tweetDate)
+    .append($tweetButtons);
+
+  // Construct the entire tweet article element
+
+  const $tweet = $("<article>")
+    .attr("class", "tweet")
+    .append($tweetHeader)
+    .append($tweetContent)
+    .append($tweetFooter);
 
   return $tweet;
 
 };
+
+// Display tweets on the page, also used when posting new tweets
 
 const renderTweets = function(tweetArray) {
 
@@ -74,6 +76,8 @@ const renderTweets = function(tweetArray) {
   }
 
 };
+
+//Function to load tweets from database, then rendered to the page
 
 const loadTweets = function() {
 
@@ -86,12 +90,18 @@ const loadTweets = function() {
 
 $(document).ready(function() {
 
+  // Load tweets on page load
+
   loadTweets();
+
+  // Ajax handling of form submission
 
   $("form").submit(function(event) {
 
     event.preventDefault();
     const tweetContent = $(this).serialize();
+
+    // Prevent empty submissions
 
     if (tweetContent === 'text=') {
       $('#tweet-error').html(`You can't tweet nothing!`);
@@ -100,6 +110,9 @@ $(document).ready(function() {
       });
       return;
     };
+
+    // Prevent too long of a tweet
+
     if (tweetContent.length > 145) {
       $('#tweet-error').html(`You sure have a lot to say!`);
       $('#tweet-error').fadeIn(500, () => {
@@ -108,13 +121,16 @@ $(document).ready(function() {
       return;
     };
 
+    // Ajax post to /tweets, once completed, create tweet element and add to page
+
     $.post("/tweets", tweetContent, (tweetObj) => {
       const tweetElement = createTweetElement(tweetObj);
       $('#tweets-container').prepend(tweetElement);
     });
 
-    $(this).trigger("reset");
+    // Reset input field and character count on submit
 
+    $(this).trigger("reset");
     $('.counter').html('140');
 
   });
