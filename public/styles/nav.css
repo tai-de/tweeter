@@ -1,29 +1,24 @@
 @keyframes myAnim {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
 
-	10%,
-	30%,
-	50%,
-	70% {
-		transform: translateY(-4px);
-	}
+  0%, 100% {
+    transform: translateY(0);
+  }
 
-	20%,
-	40%,
-	60% {
-		transform: translateY(4px);
-	}
+  10%, 30%, 50%, 70% {
+    transform: translateY(0px);
+  }
 
-	80% {
-		transform: translateY(3.1px);
-	}
+  20%, 40%, 60% {
+    transform: translateY(4px);
+  }
 
-	90% {
-		transform: translateY(-3.1px);
-	}
+  80% {
+    transform: translateY(3.1px);
+  }
+
+  90% {
+    transform: translateY(-3.1px);
+  }
 }
 
 nav {
@@ -38,6 +33,16 @@ nav {
   background: rgb(var(--clr-liberty));
   color: rgb(var(--clr-ghost-white));
   box-shadow: 0 0px 5px 5px rgb(var(--clr-bistre), 0.25);
+  transition: 500ms;
+}
+
+nav.compact {
+  height: 2em;
+  transition: 500ms;
+}
+
+nav.compact .nav-compose-tweet {
+  display: none;
 }
 
 nav .logo {
@@ -59,7 +64,6 @@ nav .nav-compose-tweet {
 }
 
 nav .nav-compose-tweet i {
-  color: rgb(255, 0, 0);
   animation: myAnim 10s linear 0s infinite normal forwards;
 }
 

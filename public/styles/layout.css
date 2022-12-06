@@ -23,4 +23,24 @@ body {
 main {
   width: 90%;
   align-self: center;
+  margin-bottom: 5vh;
+}
+
+.toTopButton {
+  position: fixed;
+  right: 0.5em;
+  bottom: 0.5em;
+  height: 2em;
+  width: 2em;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(var(--clr-pacific-blue));
+  border-radius: 50%;
+  color: rgb(var(--clr-ghost-white), 0.5);
+}
+
+.toTopButton:hover {
+  color: rgb(var(--clr-ghost-white), 1);
+  cursor: pointer;
 }

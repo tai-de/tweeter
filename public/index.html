@@ -36,14 +36,19 @@
 </head>
 
 <body>
+
   <!-- Top nav bar (fixed) -->
+
   <nav>
     <span class="logo">tweeter</span>
-    <span class="nav-compose-tweet">
+    <span class="nav-compose-tweet" id="nav-compose-tweet">
       <span><strong>Write</strong> a new tweet</span>
-      <i class="fa-solid fa-angles-down"></i>
+      <span><i class="fa-solid fa-angles-down"></i></span>
     </span>
   </nav>
+
+  <!-- Header bar ('user' profile) -->
+
   <header class="user-container">
     <div>
       <img src="/images/profile-hex.png">
@@ -52,8 +57,13 @@
       <h2><strong>Olivia</strong> Pope</h2>
     </div>
   </header>
-  <!-- Page-specific (main) content here -->
+
+  <!-- Main content here -->
+
   <main class="container">
+
+    <!-- New tweet section -->
+
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id="new-tweet" action="/tweets/" method="POST">
@@ -68,43 +78,21 @@
         </div>
       </form>
     </section>
+
+    <!-- Tweets container -->
+
     <section id="tweets-container">
-      <!-- <article class="tweet">
-        <header>
-          <span class="tweet-user-img"><img src="https://i.imgur.com/5fUVPRP.png"></span>
-          <span class="tweet-user-name">Shrek</span>
-          <span class="tweet-user-handle">@SwampDaddy</span>
-        </header>
-        <section class="tweet-content">Git out!</section>
-        <footer>
-          <span class="tweet-date">10 days ago</span>
-          <span class="tweet-buttons">
-            <i class="fa-regular fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-regular fa-heart"></i>
-          </span>
-        </footer>
-      </article> -->
     </section>
 
-    <!-- <div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Blandit massa enim nec dui nunc mattis enim. Mauris pellentesque pulvinar pellentesque habitant
-        morbi tristique senectus et. Amet dictum sit amet justo donec enim. Amet justo donec enim diam vulputate ut.
-        Ultrices neque ornare aenean euismod elementum. Est lorem ipsum dolor sit amet consectetur adipiscing elit
-        pellentesque.</p>
-
-      <p>Amet nulla facilisi morbi tempus iaculis urna id volutpat lacus. In nibh mauris cursus mattis molestie a
-        iaculis. Habitasse platea dictumst vestibulum rhoncus est. Sed id semper risus in hendrerit gravida rutrum
-        quisque non. Ac tortor vitae purus faucibus ornare suspendisse. Proin fermentum leo vel orci porta non pulvinar
-        neque laoreet. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Nunc congue nisi vitae suscipit.
-        Cras ornare arcu dui vivamus arcu felis bibendum. Imperdiet proin fermentum leo vel orci. Massa tincidunt nunc
-        pulvinar sapien et ligula ullamcorper.
-      </p>
-    </div> -->
-
   </main>
-  <!-- <a href="https://www.freepik.com/free-vector/hand-drawn-people-avatar-collection_5183188.htm#query=avatar&position=4&from_view=author">Image by pikisuperstar</a> on Freepik -->
+
+  <!-- Go to top button -->
+
+  <span id="toTopButton" class="toTopButton show" title="Go to top">
+    <i class="fa-solid fa-angles-up"></i>
+  </span>
+
+
 </body>
 
 </html>

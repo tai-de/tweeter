@@ -1,25 +1,8 @@
-/*
-      <article class="tweet">
-        <header>
-          <span class="tweet-user-img"><img src="https://i.imgur.com/5fUVPRP.png"></span>
-          <span class="tweet-user-name">Shrek</span>
-          <span class="tweet-user-handle">@SwampDaddy</span>
-        </header>
-        <section class="tweet-content">Git out!</section>
-        <footer>
-          <span class="tweet-content">10 days ago</span>
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </footer>
-      </article>
-*/
-
 #tweets-container {
   padding: 1em 0;
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   gap: 1em;
 }
 
@@ -61,9 +44,8 @@
 .tweet .tweet-content {
   padding: 1em;
   border-bottom: solid 3px rgb(var(--clr-bistre));
-
-    /*-ms-word-wrap: normal;*/
-    word-wrap: break-word;
+  -ms-word-wrap: normal;
+  word-wrap: break-word;
 }
 
 .tweet footer {
