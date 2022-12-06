@@ -104,20 +104,16 @@ $(document).ready(function() {
     // Prevent empty submissions
 
     if (tweetContent === 'text=') {
-      $('#tweet-error').html(`You can't tweet nothing!`);
-      $('#tweet-error').fadeIn(500, () => {
-        $('#tweet-error').fadeOut(5000);
-      });
+      $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You can't tweet nothing!`);
+      $('#tweet-error').fadeIn(500);
       return;
     };
 
     // Prevent too long of a tweet
 
     if (tweetContent.length > 145) {
-      $('#tweet-error').html(`You sure have a lot to say!`);
-      $('#tweet-error').fadeIn(500, () => {
-        $('#tweet-error').fadeOut(5000);
-      });
+      $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You sure have a lot to say!`);
+      $('#tweet-error').slideDown(500);
       return;
     };
 
@@ -132,6 +128,7 @@ $(document).ready(function() {
 
     $(this).trigger("reset");
     $('.counter').html('140');
+    $('#tweet-error').fadeOut(250);
 
   });
 
