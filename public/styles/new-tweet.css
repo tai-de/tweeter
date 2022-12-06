@@ -39,6 +39,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5em 0 0;
 }
 
@@ -48,6 +49,14 @@
   color: rgb(var(--clr-ghost-white));
   border: none;
   padding: 0.25em 0.5em;
+}
+
+.new-tweet .tweet-error {
+  display: none;
+  color: #f00;
+  font-family: 'Bungee', sans-serif;
+  font-weight: bold;
+  transition: ease-in-out;
 }
 
 .new-tweet .counter {

@@ -27,6 +27,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -47,26 +48,27 @@
       <img src="/images/profile-hex.png">
     </div>
     <div>
-      <h2><strong>Tai</strong> Delisle</h2>
+      <h2><strong>Olivia</strong> Pope</h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets/" method="POST">
+      <form id="new-tweet" action="/tweets/" method="POST">
         <div class="new-tweet-input">
           <label for="tweet-text" id="tweet-text-label">What are you <i>humming</i> about?</label>
           <textarea name="text" id="tweet-text" rows="1"></textarea>
         </div>
         <div class="new-tweet-controls">
           <button type="submit">Tweet</button>
+          <span id="tweet-error" class="tweet-error">Your tweet cannot be empty!</span>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
     <section id="tweets-container">
-      <!-- <article class="tweet">
+      <article class="tweet">
         <header>
           <span class="tweet-user-img"><img src="https://i.imgur.com/5fUVPRP.png"></span>
           <span class="tweet-user-name">Shrek</span>
@@ -81,28 +83,9 @@
             <i class="fa-regular fa-heart"></i>
           </span>
         </footer>
-      </article> -->
+      </article>
     </section>
-
-    <!-- <script>
-
-const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
- }
- 
- const $tweet = createTweetElement(tweetData);
- $('#tweets-container').append($tweet);
-
-    </script> -->
-
+    
     <!-- <div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Blandit massa enim nec dui nunc mattis enim. Mauris pellentesque pulvinar pellentesque habitant

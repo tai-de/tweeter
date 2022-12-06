@@ -9,12 +9,17 @@
   background: rgb(var(--clr-ghost-white));
   background-image: url('../images/header-texture.png');
   box-shadow: 0 0px 5px 5px rgb(var(--clr-bistre), 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .user-container img {
   margin: 0.25em;
-  -webkit-filter: drop-shadow(5px 5px 5px rgb(var(--clr-bistre)));
-  filter: drop-shadow(5px 5px 5px rgb(var(--clr-bistre)));
+  -webkit-filter: drop-shadow(5px 5px 5px rgb(var(--clr-bistre), 0.5));
+  filter: drop-shadow(2px 2px 5px rgb(var(--clr-bistre), 0.5));
 }
 
 .user-container h2 {

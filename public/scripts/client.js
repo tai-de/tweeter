@@ -4,16 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// $(document).ready(function() {
-
-//   $.ajax('client.js', { method: 'GET' })
-//     .then(function(tweetsHtml) {
-//       console.log('Success: ', tweetsHtml);
-//       // $button.replaceWith(morePostsHtml);
-//     });
-
-// });
-
 const data = [
   {
     "user": {
@@ -31,13 +21,20 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
   }
-]
+];
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function(tweet) {
 
@@ -45,7 +42,7 @@ const createTweetElement = function(tweet) {
   const name = tweet.user.name;
   const handle = tweet.user.handle;
   const content = tweet.content.text;
-  const date = tweet["created_at"];
+  const date = timeago.format(tweet["created_at"], 'en_US');
 
 
   const $tweet = $(`<article class="tweet">
@@ -54,7 +51,7 @@ const createTweetElement = function(tweet) {
     <span class="tweet-user-name">${name}</span>
     <span class="tweet-user-handle">${handle}</span>
   </header>
-  <section class="tweet-content">${content}</section>
+  <section class="tweet-content">${escape(content)}</section>
   <footer>
     <span class="tweet-date">${date}</span>
     <span class="tweet-buttons">
@@ -70,14 +67,58 @@ const createTweetElement = function(tweet) {
 };
 
 const renderTweets = function(tweetArray) {
-  
+
   for (const tweet of tweetArray) {
-    const $tweetArticle = createTweetElement(tweet)
-    $('#tweets-container').append($tweetArticle);
+    const $tweetArticle = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweetArticle);
   }
-  
+
+};
+
+const loadTweets = function() {
+
+  $.ajax('/tweets', { method: 'GET' })
+    .then(function(tweets) {
+      renderTweets(tweets);
+    });
+
 };
 
 $(document).ready(function() {
-renderTweets(data);
-})
+
+  loadTweets();
+
+  $("form").submit(function(event) {
+
+    event.preventDefault();
+    const tweetContent = $(this).serialize();
+
+    if (tweetContent === 'text=') {
+      $('#tweet-error').html(`You can't tweet nothing!`);
+      $('#tweet-error').fadeIn(500, () => {
+        $('#tweet-error').fadeOut(5000);
+      });
+      return;
+    };
+    if (tweetContent.length > 145) {
+      $('#tweet-error').html(`You sure have a lot to say!`);
+      $('#tweet-error').fadeIn(500, () => {
+        $('#tweet-error').fadeOut(5000);
+      });
+      return;
+    };
+
+    $.post("/tweets", tweetContent, (tweetObj) => {
+      const tweetElement = createTweetElement(tweetObj);
+      $('#tweets-container').prepend(tweetElement);
+    });
+
+    $(this).trigger("reset");
+
+    $('.counter').html('140');
+
+  });
+
+});
+
+
