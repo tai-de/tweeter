@@ -31,9 +31,9 @@ $(document).ready(function() {
   // Remove 'invalid' characters and resize
 
   $('textarea').on('input', function() {
-    $(this).val( $(this).val().replace(/\r?\n/gi, ' ' ) ); // delete carriage return (replace with space)
-    $(this).val( $(this).val().replace(/^\s/gi, '' ) ); // delete leading spaces in input
-    $(this).val( $(this).val().replace(/\s{2}/gi, ' ' ) ); // replace double spaces with single
+    $(this).val($(this).val().replace(/\r?\n/gi, ' ')); // delete carriage return (replace with space)
+    $(this).val($(this).val().replace(/^\s/gi, '')); // delete leading spaces in input
+    $(this).val($(this).val().replace(/\s{2}/gi, ' ')); // replace double spaces with single
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
   });

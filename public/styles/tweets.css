@@ -20,10 +20,6 @@
   align-items: center;
 }
 
-.tweet header span {
-  /* flex-grow: 1; */
-}
-
 .tweet img {
   height: 1.75em;
   width: 1.75em;

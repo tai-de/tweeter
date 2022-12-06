@@ -113,7 +113,7 @@ $(document).ready(function() {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You can't tweet nothing!`);
       $('#tweet-error').fadeIn(500);
       return;
-    };
+    }
 
     // Prevent too short of a tweet
 
@@ -121,14 +121,14 @@ $(document).ready(function() {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> Don't be shy, speak your mind!`);
       $('#tweet-error').fadeIn(500);
       return;
-    };
+    }
     // Prevent too long of a tweet
 
     if (tweetContent.length > 140) {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You sure have a lot to say!`);
       $('#tweet-error').fadeIn(500);
       return;
-    };
+    }
 
     // Ajax post to /tweets, once completed, create tweet element and add to page
 
