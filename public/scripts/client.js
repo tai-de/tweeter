@@ -1,12 +1,8 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// Function to create the HTML for tweets
+// Function to create the HTML element for tweets
 
 const createTweetElement = function(tweet) {
+
+  // Breaking down tweet object
 
   const avatar = tweet.user.avatars;
   const name = tweet.user.name;
@@ -14,7 +10,23 @@ const createTweetElement = function(tweet) {
   const content = tweet.content.text;
   const date = timeago.format(tweet["created_at"], 'en_US');
 
-  // Build the individual items within the tweet article
+  //Setting up the tooltip for showing exact date when hovering over 'timeago' text
+
+  let dateString = new Date(tweet["created_at"]).toDateString();
+  let yesterdayDate = new Date();
+  yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+
+  if (dateString === new Date().toDateString()) {
+    dateString = 'Today';
+  }
+  if (dateString === yesterdayDate.toDateString()) {
+    dateString = 'Yesterday';
+  }
+
+  const timeString = new Date(tweet["created_at"]).toLocaleTimeString();
+  const dateTip = `${dateString}, ${timeString}`;
+
+  // Construct the individual pieces within the tweet article
 
   const $tweetUserImg = $("<span>")
     .attr("class", "tweet-user-img")
@@ -31,15 +43,16 @@ const createTweetElement = function(tweet) {
 
   const $tweetDate = $("<span>")
     .attr("class", "tweet-date")
+    .attr("title", `${dateTip}`)
     .html(date);
 
   const $tweetButtons = $(`<span class="tweet-buttons">
-    <i class="fa-regular fa-flag"></i>
-    <i class="fa-solid fa-retweet"></i>
-    <i class="fa-regular fa-heart"></i>
+    <i id="flag" class="fa-regular fa-flag"></i>
+    <i id="retweet" class="fa-solid fa-retweet"></i>
+    <i id="like" class="fa-regular fa-heart"></i>
     </span>`);
 
-  // Building the sections of the tweet article element
+  // Construct the sections of the tweet element
 
   const $tweetHeader = $("<header>")
     .append($tweetUserImg)
@@ -54,7 +67,7 @@ const createTweetElement = function(tweet) {
     .append($tweetDate)
     .append($tweetButtons);
 
-  // Construct the entire tweet article element
+  // Construct the entire tweet element
 
   const $tweet = $("<article>")
     .attr("class", "tweet")
@@ -66,25 +79,45 @@ const createTweetElement = function(tweet) {
 
 };
 
-// Display tweets on the page, also used when posting new tweets
+// Render all tweets on the page
 
 const renderTweets = function(tweetArray) {
+
+  $('#tweets-container').empty();
 
   for (const tweet of tweetArray) {
     const $tweetArticle = createTweetElement(tweet);
     $('#tweets-container').prepend($tweetArticle);
   }
 
+  // Custom hover effects for like & flag btns
+
+  $('#flag').hover(function() {
+    $('#flag').removeClass('fa-regular');
+    $('#flag').addClass('fa-solid');
+  }, function() {
+    $('#flag').addClass('fa-regular');
+    $('#flag').removeClass('fa-solid');
+  });
+
+  $('#like').hover(function() {
+    $('#like').removeClass('fa-regular');
+    $('#like').addClass('fa-solid');
+  }, function() {
+    $('#like').addClass('fa-regular');
+    $('#like').removeClass('fa-solid');
+  });
+
 };
 
-//Function to load tweets from database, then rendered to the page
+// Function to send an AJAX GET request to the tweets database,
+// then render the response to the page
 
 const loadTweets = function() {
 
-  $.ajax('/tweets', { method: 'GET' })
-    .then(function(tweets) {
-      renderTweets(tweets);
-    });
+  $.get('tweets').then((tweets) => {
+    renderTweets(tweets);
+  });
 
 };
 
@@ -94,7 +127,7 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Ajax handling of form submission
+  // AJAX handling of form submission
 
   $("form").submit(function(event) {
 
@@ -115,14 +148,15 @@ $(document).ready(function() {
       return;
     }
 
-    // Prevent too short of a tweet
+    // Prevent too short of a tweet (10 chars)
 
     if (tweetContent.length < 10) {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> Don't be shy, speak your mind!`);
       $('#tweet-error').fadeIn(500);
       return;
     }
-    // Prevent too long of a tweet
+
+    // Prevent too long of a tweet (140 chars)
 
     if (tweetContent.length > 140) {
       $('#tweet-error').html(`<i class="fa-solid fa-circle-exclamation"></i> You sure have a lot to say!`);
@@ -130,15 +164,13 @@ $(document).ready(function() {
       return;
     }
 
-    // Ajax post to /tweets, once completed, create tweet element and add to page
+    // AJAX post to /tweets and re-render tweets once finished
 
-    $.post("/tweets", serializedContent, (tweetObj) => {
-      renderTweets([tweetObj]);
-      // const tweetElement = createTweetElement(tweetObj);
-      // $('#tweets-container').prepend(tweetElement);
+    $.post("/tweets", serializedContent, () => {
+      loadTweets();
     });
 
-    // Reset input field and character count on submit
+    // Reset fields and character count on submit
 
     $(this).trigger("reset");
     $('#tweet-text').css({ 'height': 'auto' });
@@ -146,11 +178,9 @@ $(document).ready(function() {
     $('#tweet-text-label').addClass('restore');
     $('#tweet-text-label').removeClass('minimize');
     $('#tweet-text').focus();
-    $('.counter').html('140');
-    $('#tweet-error').fadeOut(250);
+    $('.counter').text('140');
 
   });
 
 });
-
 

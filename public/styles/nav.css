@@ -10,76 +10,72 @@
   }
 }
 nav {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  z-index: 99;
-  height: 120px;
-  width: 100%;
-  padding: 0 1.5em;
-  color: rgb(var(--clr-light));
-  transition: 100ms;
-}
-
-nav.compact {
-  display: flex;
-  height: 3.75em;
-  transition: 250ms;
-}
-
-nav.compact .nav-compose-tweet {
-  display: none;
-}
-
-nav .logo {
-  display: flex;
-  align-items: center;
-  font-family: "Bungee", sans-serif;
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  display: flex;
+  z-index: 99;
+  height: 120px;
+  width: 100%;
+  padding: 0 1.5em;
+  color: #f5f6f7;
+  transition: 100ms;
+}
+nav.compact {
+  display: flex;
+  height: 3.75em;
+  transition: 250ms;
+}
+nav.compact .nav-compose-tweet {
+  display: none;
+}
+nav .logo {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 0.25em;
+  font-family: "Bungee", sans-serif;
   cursor: pointer;
 }
-
 nav .nav-compose-tweet {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 0.25em;
   font-size: 0.75em;
-  color: rgb(var(--clr-light), 0.5);
+  color: rgba(245, 246, 247, 0.5);
 }
-
 nav .nav-compose-tweet i {
   animation: bouncyBoy 1s linear 0s infinite normal forwards;
 }
-
 nav .nav-compose-tweet:hover {
-  color: rgb(var(--clr-light));
+  color: #f5f6f7;
   cursor: pointer;
   animation: none;
 }
 
 .toTopButton {
-  position: fixed;
-  display: none;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  display: none;
   right: 0.5em;
   bottom: 0.5em;
   height: 2em;
   width: 2em;
-  background-color: rgb(var(--clr-accent));
+  background-color: #8a9bd0;
   border-radius: 50%;
-  color: rgb(var(--clr-light), 0.5);
+  color: rgba(245, 246, 247, 0.5);
 }
 
 .toTopButton:hover {
-  color: rgb(var(--clr-light), 1);
+  color: #f5f6f7;
   cursor: pointer;
 }
 
@@ -87,8 +83,9 @@ nav .nav-compose-tweet:hover {
 @media (min-width: 1024px) {
   nav {
     padding: 0 5em;
-    background: rgb(var(--clr-nav));
-    box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
+    background-color: #8a9bd0;
+    background-image: url("../images/header-texture-3.png");
+    box-shadow: 0 0px 5px 5px rgba(53, 53, 49, 0.25);
   }
   nav.compact {
     display: flex;

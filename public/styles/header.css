@@ -1,32 +1,29 @@
 .user-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
   height: 520px;
   width: 100%;
-  /* margin-top: 120px; */
   padding-top: 120px;
-  background: rgb(var(--clr-accent));
-  background-image: url("../images/header-texture.png");
-  box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
+  background: #8a9bd0;
+  background-image: url("../images/header-texture-3.png");
+  box-shadow: 0 0px 5px 5px rgba(53, 53, 49, 0.25);
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
 }
-
 .user-container img {
   margin: 0.25em;
-  -webkit-filter: drop-shadow(2px 2px 5px rgb(var(--clr-dark), 0.5));
-  filter: drop-shadow(2px 2px 5px rgb(var(--clr-dark), 0.5));
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(53, 53, 49, 0.5));
+  filter: drop-shadow(2px 2px 5px rgba(53, 53, 49, 0.5));
 }
-
 .user-container h2 {
   margin: 0.25em;
   font-weight: normal;
-  color: rgb(var(--clr-light));
+  color: #f5f6f7;
 }
 
 /* Responsive scale up for computer screens */

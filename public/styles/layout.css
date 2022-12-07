@@ -1,28 +1,32 @@
-/*
- * Global layout stuff
- */
 body {
   /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  color: rgb(var(--clr-dark));
-  background-color: rgb(var(--clr-main));
+  color: #353531;
+  background-color: #f5e9e0;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.5em;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-/*  CUSTOM COLOR PALETTE
- https://coolors.co/322214-4056a1-f7f7ff-46b1c9-1cfeba
- */
 main {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   align-self: center;
   margin-bottom: 5vh;
-  display: flex;
-  flex-direction: column;
+}
+
+.footnote {
+  align-self: center;
+  color: rgba(53, 53, 49, 0.25);
+  font-size: 0.5em;
+  text-decoration: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Responsive scale up for computer screens */

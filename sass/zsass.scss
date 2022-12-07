@@ -1,0 +1,36 @@
+$dark: #353531;
+$nav: #4056A1;
+$light: #F5F6F7;
+$main: #F5E9E0;
+$accent: #8A9BD0;
+
+$print: 'Source Sans Pro', sans-serif;
+$display: 'Bungee', sans-serif;
+
+@mixin flex-col() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-cen() {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-even-cen() {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin flex-between-cen() {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin no-select() {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

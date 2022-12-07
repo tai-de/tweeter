@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-  // Set up textarea to listen for any changes & update character counter
+  // Update character counter on textarea change, and remove
+  // any carriage returns and leading/double spaces
 
   $('#tweet-text').bind('input propertychange', function() {
 

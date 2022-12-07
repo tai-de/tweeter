@@ -1,31 +1,28 @@
-/*
- * Global layout stuff
- */
+@use 'zsass' as *;
 
 body {
   /* height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  color: rgb(var(--clr-dark));
-  background-color: rgb(var(--clr-main));
-  font-family: 'Source Sans Pro', sans-serif;
+  @include flex-col;
+  color: rgb($dark, 1);
+  background-color: rgb($main, 1);
+  font-family: $print;
   font-size: 1.5em;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-/*  CUSTOM COLOR PALETTE
- https://coolors.co/322214-4056a1-f7f7ff-46b1c9-1cfeba
- */
-
 main {
+  @include flex-col;
   width: 90%;
   align-self: center;
   margin-bottom: 5vh;
-  display: flex;
-  flex-direction: column;
+}
+
+.footnote {
+  align-self: center;
+  color: rgb($dark, 0.25);
+  font-size: 0.5em;
+  text-decoration: none;
+  cursor: default;
+  @include no-select;
 }
 
 /* Responsive scale up for computer screens */
@@ -41,5 +38,5 @@ main {
     margin: 120px 2em 0;
     width: 50%;
   }
-  
+
 }

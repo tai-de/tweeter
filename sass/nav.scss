@@ -1,3 +1,5 @@
+@use 'zsass' as *;
+
 @keyframes bouncyBoy {
 
   0% {
@@ -15,76 +17,71 @@
 }
 
 nav {
+
+  @include no-select;
+  @include flex-between-cen;
   position: fixed;
   display: flex;
-  justify-content: space-between;
-  align-content: center;
   z-index: 99;
   height: 120px;
   width: 100%;
   padding: 0 1.5em;
-  color: rgb(var(--clr-light));
+  color: rgba($light, 1);
   transition: 100ms;
-}
 
-nav.compact {
-  display: flex;
-  height: 3.75em;
-  transition: 250ms;
-}
+  &.compact {
+    display: flex;
+    height: 3.75em;
+    transition: 250ms;
+  }
 
-nav.compact .nav-compose-tweet {
-  display: none;
-}
+  &.compact .nav-compose-tweet {
+    display: none;
+  }
 
-nav .logo {
-  display: flex;
-  align-items: center;
-  font-family: 'Bungee', sans-serif;
-  user-select: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  cursor: pointer;
-}
+  .logo {
+    @include flex-between-cen;
+    display: flex;
+    gap: 0.25em;
+    font-family: $display;
+    cursor: pointer;
+  }
 
-nav .nav-compose-tweet {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25em;
-  font-size: 0.75em;
-  color: rgb(var(--clr-light), 0.5);
-}
+  .nav-compose-tweet {
+    @include flex-col;
+    @include flex-cen;
+    gap: 0.25em;
+    font-size: 0.75em;
+    color: rgb($light, 0.5);
+  }
 
-nav .nav-compose-tweet i {
-  animation: bouncyBoy 1s linear 0s infinite normal forwards;
-}
+  .nav-compose-tweet i {
+    animation: bouncyBoy 1s linear 0s infinite normal forwards;
+  }
 
-nav .nav-compose-tweet:hover {
-  color: rgb(var(--clr-light));
-  cursor: pointer;
-  animation: none;
+  .nav-compose-tweet:hover {
+    color: rgb($light, 1);
+    cursor: pointer;
+    animation: none;
+  }
+
 }
 
 .toTopButton {
+  @include flex-cen;
   position: fixed;
   display: none;
-  justify-content: center;
-  align-items: center;
   right: 0.5em;
   bottom: 0.5em;
   height: 2em;
   width: 2em;
-  background-color: rgb(var(--clr-accent));
+  background-color: rgb($accent, 1);
   border-radius: 50%;
-  color: rgb(var(--clr-light), 0.5);
+  color: rgb($light, 0.5);
 }
 
 .toTopButton:hover {
-  color: rgb(var(--clr-light), 1);
+  color: rgb($light, 1);
   cursor: pointer;
 }
 
@@ -93,19 +90,22 @@ nav .nav-compose-tweet:hover {
 @media (min-width: 1024px) {
 
   nav {
+
     padding: 0 5em;
-    background: rgb(var(--clr-nav));
-    box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
-  }
+    background-color: rgb($accent, 1);
+    background-image: url('../images/header-texture-3.png');
+    box-shadow: 0 0px 5px 5px rgb($dark, 0.25);
 
-  nav.compact {
-    display: flex;
-    height: 2em;
-    transition: 250ms;
-  }
+    &.compact {
+      display: flex;
+      height: 2em;
+      transition: 250ms;
+    }
 
-  nav .nav-compose-tweet {
-    font-size: 1em;
+    .nav-compose-tweet {
+      font-size: 1em;
+    }
+
   }
 
 }

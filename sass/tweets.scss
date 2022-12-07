@@ -1,67 +1,101 @@
+@use 'zsass' as *;
+
 #tweets-container {
-  display: flex;
+  @include flex-col;
   justify-content: space-evenly;
-  flex-direction: column;
   gap: 1em;
   padding: 1em 0;
 }
 
 .tweet {
   padding: 1em;
-  border: solid 3px rgb(var(--clr-dark));
+  border: solid 3px rgb($dark, 0.5);
+
+  &:hover {
+    box-shadow: 5px 5px rgb($accent, 0.5);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    height: 1.25em;
+    width: 1.25em;
+    @include no-select;
+  }
+
+  .tweet-user-name {
+    flex-grow: 2;
+    padding: 0 1em;
+    font-size: 0.75em;
+    color: rgb($dark, 0.75);
+  }
+
+  .tweet-user-handle {
+    color: rgb($accent, 1);
+    cursor: pointer;
+    font-size: 0.75em;
+  }
+
+  .tweet-content {
+    padding: 1em;
+    border-bottom: solid 3px rgb($dark, 0.25);
+    -ms-word-wrap: normal;
+    word-wrap: break-word;
+    font-size: 0.75em;
+  }
+
+  footer {
+    @include flex-between-cen;
+    display: flex;
+    padding: 1em 1em 0em;
+    font-size: 0.75em;
+    color: rgb($dark, 0.75);
+  }
+
+  .tweet-date {
+    flex-grow: 2;
+    font-size: 0.75em;
+  }
+
+  footer i {
+    padding: 0 0.5em;
+    @include no-select;
+  }
+
+  footer i:hover {
+    color: rgba($accent, 1);
+    transform: scale(125%);
+    cursor: pointer;
+  }
+
 }
 
-.tweet:hover {
-  box-shadow: 5px 5px rgb(var(--clr-accent), 0.5);
-}
+/* Responsive scale up for computer screens */
 
-.tweet header {
-  display: flex;
-  align-items: center;
-}
+@media (min-width: 1024px) {
 
-.tweet img {
-  height: 1.75em;
-  width: 1.75em;
-}
+  .tweet {
 
-.tweet .tweet-user-name {
-  flex-grow: 2;
-  padding: 0 1em;
-  color: rgb(var(--clr-dark), 0.75);
-}
+    img {
+      height: 1.75em;
+      width: 1.75em;
+    }
 
-.tweet .tweet-user-handle {
-  color: rgb(var(--clr-accent));
-  cursor: pointer;
-  font-size: 0.75em;
-}
+    .tweet-user-name {
+      font-size: 1em;
+    }
 
-.tweet .tweet-content {
-  padding: 1em;
-  border-bottom: solid 3px rgb(var(--clr-dark));
-  -ms-word-wrap: normal;
-  word-wrap: break-word;
-}
+    .tweet-date {
+      font-size: 1em;
+    }
 
-.tweet footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 1em 0em;
-  font-size: 0.75em;
-  color: rgb(var(--clr-dark), 0.75);
-}
+    .tweet-content {
+      font-size: 1em;
+    }
 
-.tweet .tweet-date {
-  flex-grow: 2;
-}
+  }
 
-.tweet footer i {
-  padding: 0 0.25em;
-}
-
-.tweet footer i:hover {
-  color: rgba(var(--clr-accent));
-  cursor: pointer;
 }
