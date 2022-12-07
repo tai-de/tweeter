@@ -27,3 +27,19 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+/* Responsive scale up for computer screens */
+
+@media (min-width: 1024px) {
+
+  body {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  main {
+    margin: 120px 2em 0;
+    width: 50%;
+  }
+  
+}

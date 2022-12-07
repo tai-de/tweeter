@@ -3,10 +3,9 @@ section.new-tweet {
 }
 
 .new-tweet form {
-  width: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
+  width: 100%;
 }
 
 .new-tweet h3 {
@@ -15,13 +14,17 @@ section.new-tweet {
 }
 
 .new-tweet label {
-  height: 0em;
   position: relative;
   top: 1.25em;
-  left: 1em;
+  left: 0.75em;
+  height: 0em;
   font-size: 1em;
   font-weight: bold;
   color: rgb(var(--clr-dark), 0.5);
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .new-tweet label.minimize {
@@ -37,16 +40,16 @@ section.new-tweet {
 }
 
 .new-tweet textarea {
-  resize: none;
   font-weight: bold;
   min-height: 2em;
   width: 100%;
-  background: transparent;
   padding: 0 0.5em 0.5em;
+  overflow-y: hidden;
   border: 0px;
   border-bottom: solid 3px rgb(var(--clr-dark));
   outline: none;
-  overflow-y: hidden;
+  background: transparent;
+  resize: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -54,10 +57,10 @@ section.new-tweet {
 }
 
 .new-tweet .new-tweet-controls {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 0.5em 0 0;
   user-select: none;
   -webkit-user-select: none;
@@ -67,18 +70,28 @@ section.new-tweet {
 }
 
 .new-tweet button {
-  font-family: 'Bungee', sans-serif;
-  background: rgb(var(--clr-nav));
-  color: rgb(var(--clr-light));
-  border: 1px solid rgb(var(--clr-nav));
   padding: 0.25em 0.5em;
+  overflow: hidden;
+  font-family: 'Bungee', sans-serif;
+  color: rgb(var(--clr-main));
+  background-color: rgb(var(--clr-main));
+  border: 3px solid rgb(var(--clr-nav));
+  background-position: 0% 0%;
+  background-repeat: repeat-x;
+  transition: background-position 1500ms ease;
 }
 
 .new-tweet button:hover {
-  background: rgb(var(--clr-main));
   color: rgb(var(--clr-nav));
-  border: 1px solid rgb(var(--clr-nav));
+  border: 3px solid rgb(var(--clr-nav));
+  background-position: 100% 50%;
   cursor: pointer;
+  transition: 1000ms ease;
+}
+
+.liquidbg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZGVzYz5DcmVhdGVkIHdpdGggRmFicmljLmpzIDMuNS4wPC9kZXNjPgo8ZGVmcz4KPC9kZWZzPgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KC0zLjM4NTUgMCAwIC0zLjM4NTUgNTAwLjAwNjMgMjI3LjExNjYpIiBpZD0iOTAwNTY1Ij4KPHBhdGggc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBpcy1jdXN0b20tZm9udDogbm9uZTsgZm9udC1maWxlLXVybDogbm9uZTsgZmlsbDogcmdiKDY0LDg2LDE2MSk7IGZpbGwtcnVsZTogZXZlbm9kZDsgb3BhY2l0eTogMTsiIHZlY3Rvci1lZmZlY3Q9Im5vbi1zY2FsaW5nLXN0cm9rZSIgdHJhbnNmb3JtPSIgdHJhbnNsYXRlKC0xNTAuNDMxOCwgLTY4LjIwMjcpIiBkPSJNIDAuNTAxOTUzMTI1IDguOTYyODkwNjIgTCAwLjUwMTk1MzEyNSAxMzYuMjk4MDIxIEwgMzAwLjM2MTY2IDEzNi4yOTgwMjEgTCAzMDAuMzYxNjYgNy4yMTI0NjI2NyBDIDMwMC4zNjE2NiA3LjIxMjQ2MjY3IDI5MC40NTExNzIgMTIuMDY4MzU5NCAyNzguMTg1NTQ3IDEyLjA2ODM1OTQgQyAyNjUuOTE5OTIyIDEyLjA2ODM1OTQgMjQ3LjAzMzIwMyAwLjEwNzQyMTg3NSAxOTkuODEyNSAwLjEwNzQyMTg3NSBDIDE1Mi41OTE3OTcgMC4xMDc0MjE4NzUgMTI3LjY3MTg3NSA5LjUwNTg1OTM3IDEwMS40MzE2NDEgOS41MDU4NTkzNyBDIDc1LjE5MTQwNjIgOS41MDU4NTkzNyA1NS4xNjAxNTYyIDAuOTU1MDc4MTI1IDQxLjYzMDg1OTQgMC45NTUwNzgxMjUgQyAyOC4xMDE1NjI1IDAuOTU1MDc4MTI1IDAuNTAxOTUzMTI1IDguOTYyODkwNjIgMC41MDE5NTMxMjUgOC45NjI4OTA2MiBaIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9nPgo8L3N2Zz4=');
+
 }
 
 .new-tweet .tweet-error {

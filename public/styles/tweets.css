@@ -1,9 +1,9 @@
 #tweets-container {
-  padding: 1em 0;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
+  flex-direction: column;
   gap: 1em;
+  padding: 1em 0;
 }
 
 .tweet {
@@ -45,10 +45,10 @@
 }
 
 .tweet footer {
-  padding: 1em 1em 0em;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em 0em;
   font-size: 0.75em;
   color: rgb(var(--clr-dark), 0.75);
 }

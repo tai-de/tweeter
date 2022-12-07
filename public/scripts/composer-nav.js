@@ -12,26 +12,24 @@ $(document).ready(function() {
 
   const toggleComposeTweet = function() {
 
-    // if ($('#compose-slide').hasClass('open')) {
-    //   $('#compose-slide').addClass('close');
-    //   $('#compose-slide').removeClass('open');
-    // } else {
-    //   $('#compose-slide').addClass('open');
-    //   $('#compose-slide').removeClass('close');
-    // }
-
     if ($('section.new-tweet').css('display') !== 'block') {
       $('#compose-slide').css({
         "transform": "scaleY(-1)",
         "transition": "500ms"
       });
+
+      /* Prevent scroll down to compose section on desktop screen */
+      if ($(window).width() < 1024) {
+        $('html, body').animate({ scrollTop: 400 }, 360);
+      }
     }
-    if ($('section.new-tweet').css('display') === 'block')  {
-      console.log('close');
+
+    if ($('section.new-tweet').css('display') === 'block') {
       $('#compose-slide').css({
         "transform": "scaleY(+1)",
         "transition": "500ms"
       });
+      $('html, body').animate({ scrollTop: 0 }, 360);
     }
 
     $('section.new-tweet').slideToggle(500);
@@ -48,6 +46,7 @@ $(document).ready(function() {
   $(this).scroll(function() {
 
     const scrollPosition = $(window).scrollTop();
+    console.log(scrollPosition);
 
     if (scrollPosition > 400) {
       $('#toTopButton').css('display', 'flex');
@@ -55,6 +54,26 @@ $(document).ready(function() {
     } else {
       $('#toTopButton').css('display', 'none');
       $('nav').removeClass('compact');
+    }
+
+    if ($(window).width() < 1024 && scrollPosition >= 100) {
+      $('nav').css({
+        "background": "rgb(var(--clr-accent))",
+        "background-image": "url('../images/header-texture.png')",
+        "background-position": "0 -100px",
+        "box-shadow": "0 0px 5px 5px rgb(var(--clr-dark), 0.25)",
+        // "transition": "250ms"
+      });
+    } else if ($(window).width() < 1024 && scrollPosition < 100) {
+      $('nav').css({
+        "background": "none",
+        "box-shadow": "none"
+      });
+    }
+
+    if ($(window).width() < 1024 && scrollPosition > 100) {
+      // $('nav').addClass('compact');
+    } else if ($(window).width() < 1024 && scrollPosition < 100) {
     }
   });
 
@@ -70,6 +89,10 @@ $(document).ready(function() {
 
     return false;
 
+  });
+
+  $('.logo').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 360);
   });
 
 });

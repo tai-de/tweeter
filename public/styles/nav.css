@@ -1,44 +1,36 @@
-@keyframes myAnim {
+@keyframes bouncyBoy {
 
-  0%, 100% {
-    transform: translateY(0);
+  0% {
+    transform: translateY(0px);
   }
 
-  10%, 30%, 50%, 70% {
-    transform: translateY(1px);
+  50% {
+    transform: translateY(2px);
   }
 
-  20%, 40%, 60% {
-    transform: translateY(4px);
+  100% {
+    transform: translateY(0px);
   }
 
-  80% {
-    transform: translateY(3.1px);
-  }
-
-  90% {
-    transform: translateY(1px);
-  }
 }
 
 nav {
-  height: 120px;
-  width: 100vw;
-  padding: 0 1.5em;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-content: center;
   z-index: 99;
-  background: rgb(var(--clr-nav));
+  height: 120px;
+  width: 100%;
+  padding: 0 1.5em;
   color: rgb(var(--clr-light));
-  box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
-  transition: 500ms;
+  transition: 100ms;
 }
 
 nav.compact {
-  height: 2em;
-  transition: 500ms;
+  display: flex;
+  height: 3.75em;
+  transition: 250ms;
 }
 
 nav.compact .nav-compose-tweet {
@@ -54,6 +46,7 @@ nav .logo {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 nav .nav-compose-tweet {
@@ -61,11 +54,13 @@ nav .nav-compose-tweet {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 0.25em;
+  font-size: 0.75em;
   color: rgb(var(--clr-light), 0.5);
 }
 
 nav .nav-compose-tweet i {
-  animation: myAnim 10s linear 0s infinite normal forwards;
+  animation: bouncyBoy 1s linear 0s infinite normal forwards;
 }
 
 nav .nav-compose-tweet:hover {
@@ -76,13 +71,13 @@ nav .nav-compose-tweet:hover {
 
 .toTopButton {
   position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
   right: 0.5em;
   bottom: 0.5em;
   height: 2em;
   width: 2em;
-  display: none;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(var(--clr-accent));
   border-radius: 50%;
   color: rgb(var(--clr-light), 0.5);
@@ -91,4 +86,26 @@ nav .nav-compose-tweet:hover {
 .toTopButton:hover {
   color: rgb(var(--clr-light), 1);
   cursor: pointer;
+}
+
+/* Responsive scale up for computer screens */
+
+@media (min-width: 1024px) {
+
+  nav {
+    padding: 0 5em;
+    background: rgb(var(--clr-nav));
+    box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
+  }
+
+  nav.compact {
+    display: flex;
+    height: 2em;
+    transition: 250ms;
+  }
+
+  nav .nav-compose-tweet {
+    font-size: 1em;
+  }
+
 }
