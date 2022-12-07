@@ -1,14 +1,19 @@
 @keyframes bouncyBoy {
+
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(2px);
   }
+
   100% {
     transform: translateY(0px);
   }
+
 }
+
 nav {
   position: fixed;
   display: flex;
@@ -35,7 +40,7 @@ nav.compact .nav-compose-tweet {
 nav .logo {
   display: flex;
   align-items: center;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -84,18 +89,23 @@ nav .nav-compose-tweet:hover {
 }
 
 /* Responsive scale up for computer screens */
+
 @media (min-width: 1024px) {
+
   nav {
     padding: 0 5em;
     background: rgb(var(--clr-nav));
     box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
   }
+
   nav.compact {
     display: flex;
     height: 2em;
     transition: 250ms;
   }
+
   nav .nav-compose-tweet {
     font-size: 1em;
   }
+
 }

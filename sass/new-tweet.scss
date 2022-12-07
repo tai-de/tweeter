@@ -30,13 +30,13 @@ section.new-tweet {
 .new-tweet label.minimize {
   top: -0.2em;
   font-size: 0.75em;
-  transition: 1s cubic-bezier(0.15, 0.8, 0.3, 0.9);
+  transition: 1s cubic-bezier(.15, .8, .3, .9);
 }
 
 .new-tweet label.restore {
   top: 1.25em;
   font-size: 1em;
-  transition: 1s cubic-bezier(0.15, 0.8, 0.3, 0.9);
+  transition: 1s cubic-bezier(.15, .8, .3, .9);
 }
 
 .new-tweet textarea {
@@ -72,7 +72,7 @@ section.new-tweet {
 .new-tweet button {
   padding: 0.25em 0.5em;
   overflow: hidden;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   color: rgb(var(--clr-main));
   background-color: rgb(var(--clr-main));
   border: 3px solid rgb(var(--clr-nav));
@@ -91,21 +91,23 @@ section.new-tweet {
 
 .liquidbg {
   /* background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZGVzYz5DcmVhdGVkIHdpdGggRmFicmljLmpzIDMuNS4wPC9kZXNjPgo8ZGVmcz4KPC9kZWZzPgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KC0zLjM4NTUgMCAwIC0zLjM4NTUgNTAwLjAwNjMgMjI3LjExNjYpIiBpZD0iOTAwNTY1Ij4KPHBhdGggc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBpcy1jdXN0b20tZm9udDogbm9uZTsgZm9udC1maWxlLXVybDogbm9uZTsgZmlsbDogcmdiKDY0LDg2LDE2MSk7IGZpbGwtcnVsZTogZXZlbm9kZDsgb3BhY2l0eTogMTsiIHZlY3Rvci1lZmZlY3Q9Im5vbi1zY2FsaW5nLXN0cm9rZSIgdHJhbnNmb3JtPSIgdHJhbnNsYXRlKC0xNTAuNDMxOCwgLTY4LjIwMjcpIiBkPSJNIDAuNTAxOTUzMTI1IDguOTYyODkwNjIgTCAwLjUwMTk1MzEyNSAxMzYuMjk4MDIxIEwgMzAwLjM2MTY2IDEzNi4yOTgwMjEgTCAzMDAuMzYxNjYgNy4yMTI0NjI2NyBDIDMwMC4zNjE2NiA3LjIxMjQ2MjY3IDI5MC40NTExNzIgMTIuMDY4MzU5NCAyNzguMTg1NTQ3IDEyLjA2ODM1OTQgQyAyNjUuOTE5OTIyIDEyLjA2ODM1OTQgMjQ3LjAzMzIwMyAwLjEwNzQyMTg3NSAxOTkuODEyNSAwLjEwNzQyMTg3NSBDIDE1Mi41OTE3OTcgMC4xMDc0MjE4NzUgMTI3LjY3MTg3NSA5LjUwNTg1OTM3IDEwMS40MzE2NDEgOS41MDU4NTkzNyBDIDc1LjE5MTQwNjIgOS41MDU4NTkzNyA1NS4xNjAxNTYyIDAuOTU1MDc4MTI1IDQxLjYzMDg1OTQgMC45NTUwNzgxMjUgQyAyOC4xMDE1NjI1IDAuOTU1MDc4MTI1IDAuNTAxOTUzMTI1IDguOTYyODkwNjIgMC41MDE5NTMxMjUgOC45NjI4OTA2MiBaIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9nPgo8L3N2Zz4='); */
-  background-image: url("../images/image.svg");
+
+  background-image: url('../images/image.svg');
+
 }
 
 .new-tweet .tweet-error {
   display: none;
   width: 12em;
   color: #f00;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   font-size: 0.5em;
   font-weight: bold;
   transition: ease-in-out;
 }
 
 .new-tweet .counter {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   color: rgb(var(--clr-dark), 1);
   font-size: 0.75em;
 }
@@ -115,12 +117,16 @@ section.new-tweet {
 }
 
 /* Responsive scale up for computer screens */
+
 @media (min-width: 1024px) {
+
   .new-tweet .tweet-error {
     width: auto;
     font-size: 0.75em;
   }
+
   .new-tweet .counter {
     font-size: 1.25em;
   }
+
 }

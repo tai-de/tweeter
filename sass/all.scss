@@ -3,11 +3,13 @@
 @import url(./header.css);
 @import url(./new-tweet.css);
 @import url(./tweets.css);
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -25,11 +27,15 @@ html {
   --clr-light: 247, 247, 255;
   --clr-main: 113, 254, 212;
   --clr-accent: 55, 165, 190; */
+
+
   --clr-dark: 53, 53, 49;
   --clr-nav: 138, 155, 208;
   --clr-light: 245, 246, 244;
   --clr-main: 245, 233, 224;
   --clr-accent: 138, 155, 208; /*138, 155, 208*/
+
+
   /* ALTERNATE */
   /* --clr-dark: 14, 15, 25;
   --clr-nav: 60, 185, 145;

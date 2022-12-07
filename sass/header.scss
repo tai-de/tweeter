@@ -8,7 +8,7 @@
   /* margin-top: 120px; */
   padding-top: 120px;
   background: rgb(var(--clr-accent));
-  background-image: url("../images/header-texture.png");
+  background-image: url('../images/header-texture.png');
   box-shadow: 0 0px 5px 5px rgb(var(--clr-dark), 0.25);
   user-select: none;
   -webkit-user-select: none;
@@ -26,15 +26,18 @@
 .user-container h2 {
   margin: 0.25em;
   font-weight: normal;
-  color: rgb(var(--clr-light));
+  color:rgb(var(--clr-light))
 }
 
 /* Responsive scale up for computer screens */
+
 @media (min-width: 1024px) {
+
   .user-container {
     height: 400px;
     max-width: 400px;
     margin: 220px 0 0;
     padding-top: 0px;
   }
+
 }

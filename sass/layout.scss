@@ -1,22 +1,25 @@
 /*
  * Global layout stuff
  */
+
 body {
   /* height: 100vh; */
   display: flex;
   flex-direction: column;
   color: rgb(var(--clr-dark));
   background-color: rgb(var(--clr-main));
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5em;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 /*  CUSTOM COLOR PALETTE
  https://coolors.co/322214-4056a1-f7f7ff-46b1c9-1cfeba
  */
+
 main {
   width: 90%;
   align-self: center;
@@ -26,13 +29,17 @@ main {
 }
 
 /* Responsive scale up for computer screens */
+
 @media (min-width: 1024px) {
+
   body {
     flex-direction: row;
     justify-content: space-evenly;
   }
+
   main {
     margin: 120px 2em 0;
     width: 50%;
   }
+  
 }
