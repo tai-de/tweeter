@@ -29,13 +29,13 @@ My Tweeter project includes the LHL stretch features as well as added functional
 
 *Click on screenshots to see mobile variant*
 
-[!["Screenshot of Tweeter"](/docs/tweeter_home.png)](/docs/tweeter_home_mobile.png)
+[!["Screenshot of Tweeter"](/docs/home.png)](/docs/home_mobile.png)
 
-[!["Screenshot of compose box opened](/docs/tweeter_compose.png)](/docs/tweeter_compose_mobile.png)
+[!["Screenshot of compose box opened](/docs/compose.png)](/docs/compose_mobile.png)
 
-[!["Screenshot of invalid tweet](/docs/tweeter_invalid.png)](/docs/tweeter_invalid_mobile.png)
+[!["Screenshot of invalid tweet](/docs/invalid.png)](/docs/invalid_mobile.png)
 
-[!["Screenshot of tweets/scrolled down"](/docs/tweeter_tweets.png)](/docs/tweeter_tweets_mobile.png)
+[!["Screenshot of tweets/scrolled down"](/docs/tweets.png)](/docs/tweets_mobile.png)
 
 ## Dependencies
 

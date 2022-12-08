@@ -8,28 +8,28 @@
     "content": {
       "text": "You shall not pass!"
     },
-    "created_at": 1670196052189
+    "created_at": 1670198112605
   },
   {
     "user": {
       "name": "Daenerys Targaryen",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@KhaleesiD"
+      "handle": "@Khaleesi"
     },
     "content": {
-      "text": "All men must die, but we are not men."
+      "text": "I will take what is mine with fire and blood."
     },
-    "created_at": 1670282452189
+    "created_at": 1670284512605
   },
   {
     "user": {
       "name": "Sir Shrek",
       "avatars": "https://i.imgur.com/ilT4JDe.png",
-      "handle": "@SwampDaddy"
+      "handle": "@shr3k"
     },
     "content": {
       "text": "What are you doing in my swamp?"
     },
-    "created_at": 1670368852189
+    "created_at": 1670370912605
   }
 ]
