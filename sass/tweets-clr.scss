@@ -11,6 +11,7 @@
   padding: 1em;
   border: solid 3px white;
   border-radius: 1em;
+  backdrop-filter: blur(0.25em);
 
   &:nth-of-type(4n+1) {
 
@@ -131,7 +132,6 @@
     flex-grow: 1;
     background-color: rgb($accent, 0.1);
     border: 3px solid white;
-    backdrop-filter: blur(0.25em);
 
     header {
       @include flex-col;
