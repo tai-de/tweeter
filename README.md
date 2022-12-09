@@ -56,7 +56,7 @@ A more colourful styling option is available. It includes additional responsiven
 
 2. Install dependencies using the `npm install` command.
 
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+3. Start the web server using the `npm start` command. The app will be served at <http://localhost:8080/>.
 
 4. Go to <http://localhost:8080/> in your browser.
     - Three initial tweets are loaded from `/server/data-files/initial-tweets.json`
