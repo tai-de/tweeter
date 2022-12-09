@@ -1,0 +1,138 @@
+@use 'zsass-clr' as *;
+
+section.new-tweet {
+  display: none;
+}
+
+.new-tweet {
+
+  form {
+    @include flex-col;
+    width: 100%;
+  }
+
+  h3 {
+    margin-block-end: 0em;
+    color: rgb($accent, 1);
+    background: -webkit-linear-gradient(0deg, rgba(161,119,189,1) 0%, rgba(232,120,120,1) 22%, rgba(250,187,98,1) 56%, rgba(124,130,190,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include no-select;
+  }
+
+  label {
+    position: relative;
+    top: 1.25em;
+    left: 0.75em;
+    height: 0em;
+    font-size: 1em;
+    color: rgb($dark, 0.5);
+    background: -webkit-linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(127deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include no-select;
+  }
+
+  label.minimize {
+    top: -0.2em;
+    font-size: 0.75em;
+    transition: 1s cubic-bezier(.15, .8, .3, .9);
+  }
+
+  label.restore {
+    top: 1.25em;
+    font-size: 1em;
+    transition: 1s cubic-bezier(.15, .8, .3, .9);
+  }
+
+  textarea {
+    font-weight: bold;
+    min-height: 2em;
+    width: 100%;
+    padding: 0 0.5em 0.5em;
+    overflow-y: hidden;
+    border: 0px;
+    border-bottom: solid 3px rgb($dark, 0.5);
+    outline: none;
+    background: transparent;
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    z-index: 1;
+  }
+
+  .new-tweet-controls {
+    @include flex-between-cen;
+    display: flex;
+    width: 100%;
+    padding: 0.5em 0 0;
+    @include no-select;
+  }
+
+  button {
+    padding: 0.25em 0.5em;
+    overflow: hidden;
+    font-family: $display;
+    color: rgb($main, 1);
+    background-color: rgb($main, 1);
+    border: 3px solid rgb($accent, 1);
+    background-position: 0% 0%;
+    background-repeat: repeat-x;
+    transition: background-position 1500ms ease;
+  }
+
+  button:hover {
+    color: rgb($accent, 1);
+    border: 3px solid rgb($accent, 1);
+    background-position: 100% 50%;
+    cursor: pointer;
+    transition: 1000ms ease;
+  }
+
+  .liquidbg {
+    background-image: url('../images/image.svg');
+  }
+
+  .tweet-error {
+    display: none;
+    width: 12em;
+    color: rgb(red, 0.75);
+    font-family: $display;
+    font-size: 0.5em;
+    font-weight: bold;
+    transition: ease-in-out;
+  }
+
+  .counter {
+    font-family: $display;
+    color: rgb($dark, 0.75);
+    font-size: 0.75em;
+  }
+
+  .counter.invalid {
+    color: rgb(red, 0.75);
+  }
+
+}
+
+/* Responsive scale up for computer screens */
+
+@media (min-width: 1024px) {
+
+  .new-tweet {
+
+    .tweet-error {
+      width: auto;
+      font-size: 0.75em;
+    }
+
+    .counter {
+      font-size: 1.25em;
+    }
+
+  }
+
+}

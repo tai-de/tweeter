@@ -1,0 +1,76 @@
+body {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  color: #333333;
+  background-color: #f1ecfb;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5em;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 60%;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(240deg, rgba(251, 255, 78, 0.25) 40%, rgba(0, 9, 153, 0.25) 70%, rgba(116, 67, 35, 0.2) 86%, rgba(253, 187, 45, 0.5) 100%);
+  clip-path: path("M415.5,282Q400,324,378.5,367Q357,410,312,434.5Q267,459,223.5,429Q180,399,120,399Q60,399,46.5,345Q33,291,40.5,242Q48,193,63.5,145Q79,97,123.5,73Q168,49,217,36.5Q266,24,308,52Q350,80,383,114Q416,148,423.5,194Q431,240,415.5,282Z");
+  z-index: -99;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-self: center;
+  margin-bottom: 5vh;
+}
+
+.footnote {
+  align-self: center;
+  color: rgba(51, 51, 51, 0.25);
+  font-size: 0.5em;
+  text-decoration: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Responsive scale up for computer screens */
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -10%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(255, 82, 82) 0%, rgb(89, 89, 173) 13%, rgb(70, 181, 119) 23%, rgb(153, 238, 255) 33%);
+    clip-path: path("M415.5,285Q364,330,330.5,372Q297,414,234.5,431.5Q172,449,146.5,387.5Q121,326,104.5,283Q88,240,75.5,175.5Q63,111,115.5,65Q168,19,239,22Q310,25,366.5,66Q423,107,445,173.5Q467,240,415.5,285Z");
+    z-index: -99;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(251, 255, 78) 0%, rgb(45, 80, 153) 70%, rgb(116, 67, 35) 86%, rgb(253, 187, 45) 100%);
+    clip-path: path("M415.5,282Q400,324,378.5,367Q357,410,312,434.5Q267,459,223.5,429Q180,399,120,399Q60,399,46.5,345Q33,291,40.5,242Q48,193,63.5,145Q79,97,123.5,73Q168,49,217,36.5Q266,24,308,52Q350,80,383,114Q416,148,423.5,194Q431,240,415.5,282Z");
+    z-index: -99;
+  }
+  main {
+    margin: 120px 2em 0;
+    width: 50%;
+  }
+}

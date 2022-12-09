@@ -20,9 +20,11 @@ $(document).ready(function() {
       });
 
       // Prevent scroll down/'focus' to compose section on desktop screen
-      
+
       if ($(window).width() < 1024) {
         $('html, body').animate({ scrollTop: 400 }, 360);
+      } else {
+        $('html, body').animate({ scrollTop: 0 }, 360);
       }
 
     }
@@ -61,20 +63,9 @@ $(document).ready(function() {
     }
 
     if ($(window).width() < 1024 && scrollPosition >= 100 && mobileScrollCheck) {
-      $('nav').css({
-        "background": "rgb(138, 155, 208, 1)",
-        "background-image": "url('../images/header-texture-3.png')",
-        "background-position": "0 -100px",
-        "box-shadow": "0 0px 5px 5px rgb(53, 53, 49, 0.25)",
-        "transition": "250ms"
-      });
+      $('nav').addClass('mobile-collapse');
     } else if ($(window).width() < 1024 && scrollPosition < 100 && !mobileScrollCheck) {
-      $('nav').css({
-        "background": "none",
-        "backgorund-image": "none",
-        "box-shadow": "none",
-        "transition": "0ms"
-      });
+      $('nav').removeClass('mobile-collapse');
     }
 
   });
@@ -83,7 +74,9 @@ $(document).ready(function() {
 
   $('#toTopButton').click(function() {
 
-    $('html, body').animate({ scrollTop: 0 }, 360);
+    if ($('section.new-tweet').css('display') === 'block') {
+      $('html, body').animate({ scrollTop: 0 }, 360);
+    }
 
     if ($('section.new-tweet').css('display') !== 'block') {
       toggleComposeTweet();
@@ -93,10 +86,38 @@ $(document).ready(function() {
 
   });
 
-  // Clicking logo/app name scrolls to top
+  // Clicking logo/app name scrolls to top and swaps theme
 
   $('.logo').click(function() {
     $('html, body').animate({ scrollTop: 0 }, 360);
+
+    const el1 = document.getElementById("theme1");
+    const el2 = document.getElementById("theme2");
+
+    if (el1.disabled) {
+      el2.disabled = "disabled";
+      el1.disabled = '';
+      return;
+    }
+    if (!el1.disabled) {
+      el2.disabled = '';
+      el1.disabled = "disabled";
+      return;
+    }
+
+  });
+
+  // Fix nav bar on resize from desktop to mobile
+
+  $(window).resize(function() {
+
+    if ($(window).width() < 1024 && $('nav').hasClass('compact') && !$('nav').hasClass('mobile-collapse')) {
+      $('nav').addClass('mobile-collapse');
+    }
+    if ($(window).width() > 1024 && $('nav').hasClass('mobile-collapse')) {
+      $('nav').removeClass('mobile-collapse');
+    }
+
   });
 
 });

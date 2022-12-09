@@ -21,9 +21,14 @@ My Tweeter project includes the LHL stretch features as well as added functional
   - Nav bar background is invisible until reaching a specific scroll point
   - Sizing is adjusted to provide better view on a mobile device (tested on iPhone 13)
 
-## Bugs
+## Bonus: colourful style
 
-- Issue with nav bar visibility when resizing the window from mobile (width < 1024) to desktop if the scroll position has passed a certain point, as the mobile nav bar is transparent by default.
+!["Colourful gif"](/docs/colourful.gif)
+
+A more colourful styling option is available. It includes additional responsiveness for larger desktop sizes.
+
+- ### How it works
+  - To toggle between the two, click on the tweeter logo
 
 ## Final Product
 

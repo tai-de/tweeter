@@ -13,10 +13,10 @@
   <!-- Google Fonts/Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Changa+One&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -24,7 +24,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/all.css" type="text/css" />
+  <link id="theme1" rel="stylesheet" href="/styles/all.css" type="text/css" />
+  <link id="theme2" rel="stylesheet" href="/styles/all-clr.css" type="text/css" disabled="disabled" />
 
   <!-- External JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -34,7 +35,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/nav.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/composer.js"></script>
 
   <!-- Favicon -->
   <link rel="icon"
@@ -85,7 +86,7 @@
           <textarea name="text" id="tweet-text" rows="1"></textarea>
         </div>
         <div class="new-tweet-controls">
-          <button type="submit" class="liquidbg">Tweet</button>
+          <button type="submit" class="liquidbg">TWEET</button>
           <span id="tweet-error" class="tweet-error">Your tweet cannot be empty!</span>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>

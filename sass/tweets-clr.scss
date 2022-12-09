@@ -1,0 +1,173 @@
+@use 'zsass-clr' as *;
+
+#tweets-container {
+  @include flex-col;
+  justify-content: space-evenly;
+  gap: 1em;
+  padding: 1em 0;
+}
+
+.tweet {
+  padding: 1em;
+  border: solid 3px white;
+  border-radius: 1em;
+
+  &:nth-of-type(4n+1) {
+
+    background-color: rgb(red, 0.25);
+
+    &:hover {
+      box-shadow: 5px 5px rgb(red, 0.5);
+    }
+
+    i:hover {
+      color: red;
+    }
+
+  }
+
+  &:nth-of-type(4n) {
+
+    background-color: rgb(yellow, 0.1);
+
+    &:hover {
+      box-shadow: 5px 5px rgb(yellow, 0.5);
+    }
+
+    i:hover {
+      color: yellow;
+    }
+
+  }
+
+  &:nth-of-type(4n+2) {
+
+    background-color: rgb(indigo, 0.25);
+
+    &:hover {
+      box-shadow: 5px 5px rgb(indigo, 0.5);
+    }
+
+    i:hover {
+      color: green;
+    }
+
+  }
+
+  &:hover {
+    box-shadow: 5px 5px rgb($accent, 0.5);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    height: 1.25em;
+    width: 1.25em;
+    @include no-select;
+  }
+
+  .tweet-user-name {
+    flex-grow: 2;
+    padding: 0 1em;
+    font-size: 0.75em;
+    color: rgb($dark, 0.75);
+  }
+
+  .tweet-user-handle {
+    cursor: pointer;
+    font-size: 0.75em;
+  }
+
+  .tweet-content {
+    padding: 1em;
+    border-bottom: solid 3px rgb(white, 0.25);
+    -ms-word-wrap: normal;
+    word-wrap: break-word;
+    font-size: 0.75em;
+  }
+
+  footer {
+    @include flex-between-cen;
+    display: flex;
+    padding: 1em 1em 0em;
+    font-size: 0.75em;
+    color: rgb($dark, 0.75);
+  }
+
+  .tweet-date {
+    flex-grow: 2;
+    font-size: 0.75em;
+  }
+
+  footer i {
+    padding: 0 0.5em;
+    @include no-select;
+  }
+
+  footer i:hover {
+    color: rgba($accent, 1);
+    transform: scale(125%);
+    cursor: pointer;
+  }
+
+}
+
+/* Responsive scale up for computer screens */
+
+@media (min-width: 1024px) {
+
+  #tweets-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .tweet {
+
+    max-width: 100%;
+    flex-grow: 1;
+    background-color: rgb($accent, 0.1);
+    border: 3px solid white;
+    backdrop-filter: blur(0.25em);
+
+    header {
+      @include flex-col;
+      align-items: flex-start;
+    }
+
+    img {
+      order: 1;
+      height: 1.75em;
+      width: 1.75em;
+      margin-left: 2.25em;
+    }
+
+    .tweet-user-name {
+      order: 3;
+      font-size: 1em;
+    }
+
+    .tweet-user-handle {
+      order: 2;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .tweet-date {
+      font-size: 1em;
+    }
+
+    .tweet-content {
+      font-size: 1em;
+    }
+
+    i {
+      color: white;
+    }
+
+  }
+
+}

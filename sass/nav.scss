@@ -35,6 +35,14 @@ nav {
     transition: 250ms;
   }
 
+  &.mobile-collapse {
+    height: 3.5em;
+    background-color: rgb($accent, 1);
+    background-image: url('../images/header-texture-3.png');
+    box-shadow: 0 0px 5px 5px rgb($dark, 0.25);
+    transition: 250ms;
+  }
+
   &.compact .nav-compose-tweet {
     display: none;
   }

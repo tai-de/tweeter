@@ -1,0 +1,55 @@
+@use 'zsass-clr' as *;
+
+.user-container {
+
+  @include flex-col;
+  @include flex-even-cen;
+  height: 500px;
+  width: 100%;
+  padding-top: 100px;
+  background: linear-gradient(230deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 20%),
+    linear-gradient(337deg, rgba(0, 255, 0, 1), rgba(0, 255, 0, 0) 80%),
+    linear-gradient(127deg, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0) 80%);
+  box-shadow: 0 0px 5px 5px rgb($dark, 0.25);
+  @include no-select;
+
+  img {
+    margin: 0.25em;
+    filter: invert(1) saturate(100);
+    mix-blend-mode: overlay;
+    filter: drop-shadow(2px 2px 5px rgb($dark, 0.5));
+  }
+
+  h2 {
+    margin: 0.25em;
+    font-weight: normal;
+    color: rgb($light, 1)
+  }
+
+}
+
+/* Responsive scale up for computer screens */
+
+@media (min-width: 1024px) {
+
+  .user-container {
+    height: 400px;
+    max-width: 400px;
+    margin: 200px 0 0;
+    padding-top: 0px;
+    border-radius: 1em;
+    border: 3px solid rgb($light, 1);
+    box-shadow: 5px 5px rgb($accent, 0.5);
+    backdrop-filter: blur(0.5em);
+    background: linear-gradient(237deg, rgba(255, 0, 0, .14), rgba(255, 0, 0, 0) 20%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0) 80%),
+    linear-gradient(338deg, rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 80%);
+
+    img {
+      filter: invert(0) saturate(0);
+      mix-blend-mode: exclusion;
+    }
+
+  }
+
+}

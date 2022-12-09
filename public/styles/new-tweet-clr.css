@@ -1,0 +1,124 @@
+section.new-tweet {
+  display: none;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.new-tweet h3 {
+  margin-block-end: 0em;
+  color: #8a9bd0;
+  background: -webkit-linear-gradient(0deg, rgb(161, 119, 189) 0%, rgb(232, 120, 120) 22%, rgb(250, 187, 98) 56%, rgb(124, 130, 190) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.new-tweet label {
+  position: relative;
+  top: 1.25em;
+  left: 0.75em;
+  height: 0em;
+  font-size: 1em;
+  color: rgba(51, 51, 51, 0.5);
+  background: -webkit-linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.new-tweet label.minimize {
+  top: -0.2em;
+  font-size: 0.75em;
+  transition: 1s cubic-bezier(0.15, 0.8, 0.3, 0.9);
+}
+.new-tweet label.restore {
+  top: 1.25em;
+  font-size: 1em;
+  transition: 1s cubic-bezier(0.15, 0.8, 0.3, 0.9);
+}
+.new-tweet textarea {
+  font-weight: bold;
+  min-height: 2em;
+  width: 100%;
+  padding: 0 0.5em 0.5em;
+  overflow-y: hidden;
+  border: 0px;
+  border-bottom: solid 3px rgba(51, 51, 51, 0.5);
+  outline: none;
+  background: transparent;
+  resize: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  z-index: 1;
+}
+.new-tweet .new-tweet-controls {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 0.5em 0 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.new-tweet button {
+  padding: 0.25em 0.5em;
+  overflow: hidden;
+  font-family: "Changa One", sans-serif;
+  color: #f1ecfb;
+  background-color: #f1ecfb;
+  border: 3px solid #8a9bd0;
+  background-position: 0% 0%;
+  background-repeat: repeat-x;
+  transition: background-position 1500ms ease;
+}
+.new-tweet button:hover {
+  color: #8a9bd0;
+  border: 3px solid #8a9bd0;
+  background-position: 100% 50%;
+  cursor: pointer;
+  transition: 1000ms ease;
+}
+.new-tweet .liquidbg {
+  background-image: url("../images/image.svg");
+}
+.new-tweet .tweet-error {
+  display: none;
+  width: 12em;
+  color: rgba(255, 0, 0, 0.75);
+  font-family: "Changa One", sans-serif;
+  font-size: 0.5em;
+  font-weight: bold;
+  transition: ease-in-out;
+}
+.new-tweet .counter {
+  font-family: "Changa One", sans-serif;
+  color: rgba(51, 51, 51, 0.75);
+  font-size: 0.75em;
+}
+.new-tweet .counter.invalid {
+  color: rgba(255, 0, 0, 0.75);
+}
+
+/* Responsive scale up for computer screens */
+@media (min-width: 1024px) {
+  .new-tweet .tweet-error {
+    width: auto;
+    font-size: 0.75em;
+  }
+  .new-tweet .counter {
+    font-size: 1.25em;
+  }
+}

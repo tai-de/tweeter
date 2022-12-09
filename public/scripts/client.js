@@ -90,24 +90,6 @@ const renderTweets = function(tweetArray) {
     $('#tweets-container').prepend($tweetArticle);
   }
 
-  // Custom hover effects for like & flag btns
-
-  $('#flag').hover(function() {
-    $('#flag').removeClass('fa-regular');
-    $('#flag').addClass('fa-solid');
-  }, function() {
-    $('#flag').addClass('fa-regular');
-    $('#flag').removeClass('fa-solid');
-  });
-
-  $('#like').hover(function() {
-    $('#like').removeClass('fa-regular');
-    $('#like').addClass('fa-solid');
-  }, function() {
-    $('#like').addClass('fa-regular');
-    $('#like').removeClass('fa-solid');
-  });
-
 };
 
 // Function to send an AJAX GET request to the tweets database,

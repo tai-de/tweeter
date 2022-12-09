@@ -1,0 +1,107 @@
+@keyframes bouncyBoy {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+nav {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  display: flex;
+  z-index: 99;
+  height: 100px;
+  width: 100%;
+  padding: 0 1.5em;
+  color: #eeeeee;
+  transition: 100ms;
+}
+nav.compact {
+  display: flex;
+  height: 2em;
+  transition: 250ms;
+}
+nav.mobile-collapse {
+  height: 3.5em;
+  background: linear-gradient(230deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0) 20%), linear-gradient(337deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 80%), linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 80%);
+  backdrop-filter: blur(0.25em);
+  box-shadow: 0 0px 5px 5px rgba(51, 51, 51, 0.25);
+  transition: 250ms;
+}
+nav.compact .nav-compose-tweet {
+  display: none;
+}
+nav .logo {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 0.25em;
+  font-family: "Changa One", sans-serif;
+  cursor: pointer;
+}
+nav .nav-compose-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 0.75em;
+  color: rgba(238, 238, 238, 0.5);
+}
+nav .nav-compose-tweet i {
+  animation: bouncyBoy 1s linear 0s infinite normal forwards;
+}
+nav .nav-compose-tweet:hover {
+  color: #eeeeee;
+  cursor: pointer;
+  animation: none;
+}
+
+.toTopButton {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  display: none;
+  right: 0.5em;
+  bottom: 0.5em;
+  height: 2em;
+  width: 2em;
+  background-color: #8a9bd0;
+  border-radius: 50%;
+  color: rgba(238, 238, 238, 0.5);
+}
+
+.toTopButton:hover {
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+/* Responsive scale up for computer screens */
+@media (min-width: 1024px) {
+  nav {
+    background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    backdrop-filter: blur(0.25em);
+    border-bottom: 3px solid white;
+    padding: 0 5em;
+  }
+  nav.compact {
+    display: flex;
+    height: 2em;
+    transition: 250ms;
+  }
+  nav .nav-compose-tweet {
+    flex-direction: row;
+    font-size: 1em;
+    gap: 0.5em;
+  }
+}
